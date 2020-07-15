@@ -1,0 +1,32 @@
+{
+  "name": "spotify-api-current-playlist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FocusThen/Spotify-api-current-playlist.git"
+  },
+  "keywords": [],
+  "author": "FocusThen <mmucahit.tezcan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FocusThen/Spotify-api-current-playlist/issues"
+  },
+  "homepage": "https://github.com/FocusThen/Spotify-api-current-playlist#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "morgan": "^1.10.0"
+  }
+}
