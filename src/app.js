@@ -32,7 +32,7 @@ app.get("/currentplaying", async (req, res) => {
   const image_url = info.item.album.images[0].url;
 
   const svg = `
-    <svg width="250px"  height="250px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
+    <svg fill="none" width="250px"  height="250px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
       <foreignObject x="0" y="0" width="80%"  height="80%">
         <div xmlns="http://www.w3.org/1999/xhtml">
           <img src="${image_url}" style="width:100%"/>
