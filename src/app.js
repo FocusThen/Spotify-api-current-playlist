@@ -51,9 +51,6 @@ app.get("/currentplaying", async (req, res) => {
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(svg);
 });
-app.get("/test", async (req, res) => {
-  res.sendFile(path.join(__dirname, "public/nowplaying.html"));
-});
 
 app.get("/api", async (req, res) => {
   if (req.query) res.json({ message: "go login page /login" });
