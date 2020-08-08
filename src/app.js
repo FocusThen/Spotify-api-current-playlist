@@ -48,7 +48,7 @@ app.get("/login", function (req, res) {
       client_id +
       (scopes ? "&scope=" + encodeURIComponent(scopes) : "") +
       "&redirect_uri=" +
-      encodeURIComponent(redirect_url)
+      encodeURIComponent("https://focusthen-spotify.herokuapp.com/")
   );
 });
 
