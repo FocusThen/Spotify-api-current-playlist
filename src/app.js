@@ -4,6 +4,7 @@ const helmet = require("helmet"); // helmet for basic security
 const morgan = require("morgan"); // logs
 require("dotenv").config(); // env file reader.
 const path = require("path");
+const fetch = require("node-fetch");
 
 const { currentlyPlaying } = require("./spotifyApi");
 
@@ -30,13 +31,18 @@ app.get("/currentplaying", async (req, res) => {
   const artists_name = info.item.artists[0].name;
   const image_url = info.item.album.images[0].url;
 
-  res.json({
-    artists_name,
-    image_url,
-  });
-});
-app.get("/test", async (req, res) => {
-  res.sendFile(path.join(__dirname, "public/nowplaying.html"));
+  const svg = `
+    <svg width="250px"  height="250px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
+      <foreignObject x="0" y="0" width="80%"  height="80%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <img src="${image_url}" style="width:100%"/>
+        </div>
+      </foreignObject>
+    </svg>
+  `;
+
+  res.setHeader("Content-Type", "image/svg+xml");
+  res.send(svg);
 });
 
 app.get("/api", async (req, res) => {
