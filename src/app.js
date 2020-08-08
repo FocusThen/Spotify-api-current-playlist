@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.get("/currentplaying", async (req, res) => {
+app.get("/v2/currentplaying", async (req, res) => {
   if (TOKEN === undefined) res.json({ message: "go login page /login" });
   const info = await currentlyPlaying(TOKEN);
 

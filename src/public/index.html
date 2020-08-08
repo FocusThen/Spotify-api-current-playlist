@@ -16,7 +16,7 @@
         const token = getToken(arr)
 
         fetch(`${url}/api?token=${token}`).then(() => {
-            window.location = `${url}/currentplaying`
+            window.location = `${url}/v2/currentplaying`
         })
     </script>
 </body>
