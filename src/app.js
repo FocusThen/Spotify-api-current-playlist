@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.json({ message: "go to get /currentplaying" });
 });
 
-app.get("/currentplaying", async (req, res) => {
+app.get("/v2/current-playing", async (req, res) => {
   const info = await currentlyPlaying();
 
   const artists_name = info.item.artists[0].name;
