@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ message: "go to get /currentplaying" });
+  res.json({ message: "go to get /v2/current-playing" });
 });
 
 app.get("/v2/current-playing", async (req, res) => {
